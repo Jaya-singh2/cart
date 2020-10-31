@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(homeBackground.jpg);
+      background-position: cover;
+    }
+    li ul a {
+      color: black;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 9px 9px;
+      font-size: larger;
+      border: 1px ridge black;
+    }
+    li a.active {
+      background-color: white;
+      color: black;
+    }
+    header {
+      border: 1px ridge black;
+      width: 200px;
+      height: 640px;
+      background-color: black;
+      border-radius: 5px;
+      border-bottom-right-radius: 90px;
+      opacity: 0.8;
+    }
+
+    li a:hover:not(.active) {
+      background-color: white;
+      color: black;
+    }
+    li ul {
+      display: none;
+    }
+    li:hover ul {
+      display: block;
+      background-color: grey;
+      color: black;
+    }
+    .logo {
+      padding: 7px;
+      padding-left: 30px;
+      font-family: "Courier New", Courier, monospace;
+      color: white;
+    }
+    .sidetag {
+      border: 1px ridge;
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      color: white;
+      background-color: black;
+      padding: 70px;
+      box-shadow: 20px 20px;
+      font-family: "Times New Roman", Times, serif;
+      opacity: 0.8;
+    }
+  </style>
+  <body>
+    <header>
+      <h2 class="logo">LPU KART</h2>
+      <hr />
+      <ul>
+        <li><a class="active">Home</a></li>
+        <li>
+          <a href="">Admin</a>
+          <ul>
+            <li><a href="admin/AddProduct">AddProduct</a></li>
+            <li><a href="admin/updateProduct">UpdateProduct</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <div class="sidetag">
+      Welcome to the Admin Page !! here, you can add product in store 
+     also admin can update and remove the product.
+    </div>
+  </body>
+</html>

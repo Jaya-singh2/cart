@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: white;
+        text-align: center;
+      }
+     
+      form {
+        width: 30%;
+        padding: 30px 0px 30px 200px;
+        box-shadow: 9px 9px grey ;
+        border: 2px ridge;
+        margin-left: 30%;
+        background-color: white;
+       
+      }
+
+      input {
+        padding: 9px;
+        margin: 9px;
+        width: 200px;
+      }
+      input:hover {
+        border: 2px ridge black;
+      }
+      label {
+        font-size: larger;
+        font-family: "Times New Roman", Times, serif;
+        color: black;
+      }
+
+      button {
+        padding: 9px;
+        width: 120px;
+        margin-left: 50px;
+        font-size: larger;
+        background-color:crimson;
+        color: White;
+      }
+      button:hover {
+       cursor: pointer;
+        
+      }
+
+      ul {
+        background: crimson;
+        padding: 20px;
+      }
+    
+      li {
+        list-style-type: none;
+        display: inline;
+        padding: 20px;
+        color:black;
+      }
+      li a
+      {
+        text-decoration: none;
+        color:white
+        
+      }
+     
+      li:hover {
+        background-color: black;
+        
+      }
+       .active {
+        background-color:black;
+        color:black;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/admin">Home</a></li>
+      <li class="active"><a href="/admin/addProduct">Add product</a></li>
+    </ul>
+   
+    <form action="/admin/product" method="POST">
+     
+      <label>Product</label><br />
+      <input type="text" name="product" /><br />
+  
+      <label style="color:red"><%=arr[0]%></label>
+     <br/>
+      <label>Product Name</label><br />
+      <input type="text" name="name" /><br />
+   
+        <label style="color:red"><%=arr[0]%></label>
+       <br/>
+      <label>Product Brand</label><br />
+      <input type="text" name="brand" /><br />
+     
+        <label style="color:red"><%=arr[2]%></label>
+       <br/>
+      <label>Product Price</label><br />
+      <input type="number" name="price" /><br />
+  
+        <label style="color:red"><%=arr[3]%></label>
+       <br/>
+      <label>Product Image</label><br />
+      <input type="file" value="choose image">
+        <label style="color:red"><%=arr[0]%></label>
+       <br/>
+       <% if (error){ %>
+        <% for(err of error){ %>
+          <p style="color:red"><%= err.msg %></p>
+        <% } %>
+        <% }  %>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title%></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .productcard
+      {
+      width: 60%;
+      border:1px ridge;
+     
+      }
+      .productcard:hover
+      {
+        box-shadow: 5px 5px lightgrey;
+      }
+      .price
+      {
+        
+        font-size: larger;
+        margin-left: 70px;
+      }
+      .product
+      {
+        font-weight: bold;
+        font-size: larger;
+        margin-left: 30px;
+      }
+      button{
+        padding:7px;
+        margin:30px;
+        background-color: crimson;
+        color: white;
+      }
+      ul {
+        background: black;
+        padding: 20px;
+      }
+    
+      li {
+        list-style-type: none;
+        display: inline;
+        padding: 20px;
+        color:white;
+      }
+      li a
+      {
+        text-decoration: none;
+        color:white;
+        
+      }
+     
+      li:hover {
+        background-color: crimson;
+        
+      }
+       .active {
+        background-color: crimson;
+        
+      }
+      button a
+      {
+        text-decoration: none;
+        color: white;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/admin">Home</a></li>
+      <li class="active"><a href="/admin/updateProduct" >Admin product update</a></li>
+    </ul>
+    <% if(products.length>0) {%> <% for(prod of products) {%>
+    <form action="" method="POST">
+      <div class="productcard">
+        <span><img src="/lapy3.jpg"style="width:30px; height:25px;"/></span>
+        <span class="product">Product: <%= prod.product%> </span><span class="price">Price:  Rs. <%= prod.price%> /.</span>
+        
+        <button class="b">
+          <a href="/admin/updateform/<%=prod.id%>">Update Store</a>
+        </button>
+
+        <button><a href="/admin/remove/<%=prod.id%>">Remove Store</a></button> 
+      </div>
+      </form>
+    
+    <% }%> <% }%>
+  </body>
+</html>

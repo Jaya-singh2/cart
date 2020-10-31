@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title%></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .productcard
+      {
+        border:2px ridge black;
+        width:300px;
+        height:350px;
+        float:left;
+        margin:9px;
+      }
+      .price
+      {
+        color:red;
+        font-size: larger;
+        margin-left: 100px;
+      }
+      .product
+      {
+        font-weight: bold;
+        font-size: larger;
+        margin-left: 30px;
+      }
+      button{
+        padding:7px;
+        margin:20px;
+      }
+      button:hover
+      {
+        background-color: yellow;
+      }
+
+      ul {
+        background: black;
+        padding: 20px;
+      }
+    
+      li {
+        list-style-type: none;
+        display: inline;
+        padding: 20px;
+        color:white;
+      }
+      li a
+      {
+        text-decoration: none;
+        color:white;
+        
+      }
+     
+      li:hover {
+        background-color: crimson;
+        
+      }
+       .active {
+        background-color: crimson;
+        
+      }
+      button a
+      {
+        text-decoration: none;
+        color: black;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li class="active"><a href="/user" >Store</a></li>
+      <li><a href="/cart/product">Cart</a></li>
+    </ul>
+    
+    <form action="" method="POST">
+      <div class="productcard">
+        <img src="/lapy3.jpg"style="width:300px; height:250px;"/>
+        <span class="product"><%= products.product%> </span><span class="price"> Rs. <%= products.price%> /.</span>
+        <p>Brand:<%= products.brand%></p>
+        <p>Rating <b>5 star</b></p>
+        <br/><br/>
+      </div>
+      </form>
+    
+    
+  </body>
+</html>
